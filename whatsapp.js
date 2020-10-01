@@ -10,7 +10,7 @@ module.exports.sendMessage = function(){
 async function sendMessage(output) {
     let browser = await puppeteer.launch({
         headless: false,
-        userDataDir: '~/.config/google-chrome',
+        userDataDir: '~/.config',
         args:["--start-maximized"],
         
         defaultViewport:null
