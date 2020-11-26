@@ -49,6 +49,8 @@ async function parseHtml(html){
             newsObj[0] = heading;       
             let link = $(cards[i]).attr("href");
             let postLink = `https://economictimes.indiatimes.com${link}`;
+            console.log(postLink);
+            console.log(newsObj)
             // let ele = takeScreenshot(postLink,idx,browser);
             // arr.push(ele);
             goToEachPost(postLink,newsObj);
