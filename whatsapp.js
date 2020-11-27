@@ -5,7 +5,6 @@ let names = ["mygroup","mommy","sanuj"]
 module.exports.sendMessage = function(){
     console.log("we are in send message function.");
     console.log("*************************");
-    console.log(arguments[0]);
     sendMessage(arguments[0]);
 }
 async function sendMessage(output) {

@@ -76,6 +76,9 @@ async function handleNews(html,newsObj){
     count++;
     let $ = cheerio.load(html);
     let content = $(".artSyn.tac.font_mon p").text(); 
+    if(content==""){
+        content+=$(".artSyn h2").text();
+    }
     console.log(content);
     // let content = $(".Normal").html().split("<br>")[0];
     // content += $(".Normal").html().split("<br>")[1];
