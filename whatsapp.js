@@ -5,6 +5,7 @@ let names = ["mygroup","mommy","sanuj"]
 module.exports.sendMessage = function(){
     console.log("we are in send message function.");
     console.log("*************************");
+    console.log(arguments[0]);
     sendMessage(arguments[0]);
 }
 async function sendMessage(output) {
@@ -22,12 +23,13 @@ async function sendMessage(output) {
     await page.goto("https://web.whatsapp.com/", { waitUntil: "networkidle2" });
     /***************search the name**************************** */
     for(let i=0;i<names.length;i++){
-        await page.waitForSelector("._2S1VP",{timeout:0});
-        await page.type("._2S1VP",names[i]);
+        await page.waitForSelector("._1awRl",{timeout:0});
+        await page.type("._1awRl",names[i]);
      /********************search alternative************************ */
     await page.keyboard.press("Enter");
     /***************type message ***************************** */
-    await page.waitForSelector("._1Plpp",{visible:true});
+    await page.waitForSelector("._2HE1Z._1hRBM",{visible:true});
+    console
     let messgae = `Hhello ${names[i]}, how are you? 
                     Here, is the top5 news .
                     *News1* -> ${output[0][0]}
@@ -53,7 +55,7 @@ async function sendMessage(output) {
                     I hope it was useful reading for you.
                     ❤️❤️
                     `
-    await page.type("._1Plpp",messgae);
+    await page.type("._2HE1Z._1hRBM",messgae);
     await page.keyboard.press("Enter");
      }
      

@@ -75,10 +75,12 @@ let count = 0;
 async function handleNews(html,newsObj){
     count++;
     let $ = cheerio.load(html);
-    let content = $(".Normal").html().split("<br>")[0];
-    content += $(".Normal").html().split("<br>")[1];
-    content += $(".Normal").html().split("<br>")[2];
-    content = $(content).text().replace(/\n/g,'');
+    let content = $(".artSyn.tac.font_mon p").text(); 
+    console.log(content);
+    // let content = $(".Normal").html().split("<br>")[0];
+    // content += $(".Normal").html().split("<br>")[1];
+    // content += $(".Normal").html().split("<br>")[2];
+    // content = $(content).text().replace(/\n/g,'');
     newsObj[1] = content;
     output.push(newsObj);
     if(count == 5){
